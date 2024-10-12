@@ -1,0 +1,78 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.captcha-validation-message {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: lightslategrey;
+    width: fit-content;
+    margin: 1em auto;
+}
+input,
+textarea,
+button {
+	font: inherit;
+}
+::placeholder {
+    color: rgb(129, 192, 231);
+}
+#form-with-captcha {
+    padding: 2em;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 0.4em;
+    width: 400px;
+    margin: 0 auto;
+}
+#form-with-captcha input {
+    margin: 0.4em 0;
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    border: 1px solid rgb(129, 192, 231);
+    border-radius: 0.4em;
+    width: auto;
+    outline: none;
+    color: rgb(61, 91, 190);
+}
+#form-with-captcha input:focus {
+    background-color: rgb(192, 240, 255);
+    border: 1px solid rgb(255, 115, 0);
+}
+#form-with-captcha > div {
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+#form-with-captcha > div > img {
+    display: block;
+    width: 5em;
+    height: auto;
+    overflow: hidden;
+    border-radius: 0.4em;
+}
+#form-with-captcha > div > input {
+    width: 1.3em;
+    font-size: 1.2em;
+    padding: 0.2em 0.6em;
+    border: 1px solid rgb(129, 192, 231);
+    border-radius: 0.4em;
+}
+#form-with-captcha button {
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    color: rgb(15, 114, 175);
+    background-color: rgb(129, 204, 250);
+    border: 4px solid rgb(15, 114, 175);
+    border-radius: 0.4em;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+#form-with-captcha button:hover {
+    color: rgb(26, 139, 209);
+    background-color: rgb(164, 220, 255);
+    border-color: rgb(26, 139, 209);
+}
