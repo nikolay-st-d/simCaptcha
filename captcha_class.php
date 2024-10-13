@@ -28,12 +28,19 @@ class Captcha
 
     const PATH_TO_IMG = 'capt_img/';
 
+    public string $code;
+
+    function __construct($code)
+    {
+        $this->code = $code;
+    }
+
     function renderImage()
     {
         $file_name = (string) rand(101, 120);
         $path = Captcha::PATH_TO_IMG;
         $_SESSION['captcha_file'] = $file_name;
-        return "<img src='{$path}capt_img_{$file_name}.jpg'>";
+        return "{$path}capt_img_{$file_name}.jpg";
     }
 
     function validateCaptcha($input)
@@ -43,6 +50,15 @@ class Captcha
             return (int) $input === (int) Captcha::DATA[$file_name];
         }
         return False;
+    }
+
+    function validationMessage()
+    // This method must be called before calling the renderImage method
+    {
+        if ($this->validateCaptcha($this->code)) {
+            return '&#10004; Valid Captcha!';
+        }
+        return '&#10006; Invalid Captcha!';
     }
 
 }
