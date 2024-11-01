@@ -3,6 +3,8 @@ session_start();
 // Code required by Simcaptcha
 $code = $_POST['code'] ?? 0;
 $code = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
+
+require 'captcha_class.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +14,13 @@ $code = htmlspecialchars($code, ENT_QUOTES, 'UTF-8');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="captcha-styles.css">
-    <title>Simple Captcha</title>
+    <title>ndCaptcha - simple PHP captcha class implementation</title>
 </head>
 
 <body>
         <?php
 
-        require_once 'captcha_class.php';
-        $captcha = new Captcha($code);
+        $captcha = new ndCaptcha($code);
 
         // Optional validation message
         // Must be placed BEFORE the renderImage method

@@ -1,8 +1,7 @@
 <?php
 
-class Captcha
+class ndCaptcha
 {
-
     const DATA = [
         '101' => 5,
         '102' => 12,
@@ -38,7 +37,7 @@ class Captcha
     function renderImage()
     {
         $file_name = (string) rand(101, 120);
-        $path = Captcha::PATH_TO_IMG;
+        $path = ndCaptcha::PATH_TO_IMG;
         $_SESSION['captcha_file'] = $file_name;
         return "{$path}capt_img_{$file_name}.jpg";
     }
@@ -47,7 +46,7 @@ class Captcha
     {
         if (!empty($_SESSION['captcha_file'])) {
             $file_name = $_SESSION['captcha_file'];
-            return (int) $input === (int) Captcha::DATA[$file_name];
+            return (int) $input === (int) ndCaptcha::DATA[$file_name];
         }
         return False;
     }
